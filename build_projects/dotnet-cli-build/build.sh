@@ -88,7 +88,7 @@ while read line; do
 done < "$REPOROOT/branchinfo.txt"
 
 # Use a repo-local install directory (but not the artifacts directory because that gets cleaned a lot
-[ -z "$DOTNET_INSTALL_DIR" ] && export DOTNET_INSTALL_DIR=$REPOROOT/.dotnet_stage0/$(uname)
+[ -z "$DOTNET_INSTALL_DIR" ] && export DOTNET_INSTALL_DIR=$REPOROOT/.dotnet/x64
 [ -d "$DOTNET_INSTALL_DIR" ] || mkdir -p $DOTNET_INSTALL_DIR
 
 $REPOROOT/scripts/obtain/dotnet-install.sh --channel $CHANNEL --verbose
